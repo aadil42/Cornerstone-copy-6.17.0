@@ -1,0 +1,23 @@
+{
+  "name": "Test Widget",
+  "widget_configuration": {
+    "title": {
+      "type": "text",
+      "label": "Title",
+      "default": "Hello World"
+    },
+    "content": {
+      "type": "text",
+      "label": "Content",
+      "default": "This is my test widget"
+    },
+    "background_color": {
+      "type": "color",
+      "label": "Background Color",
+      "default": "#f5f5f5"
+    }
+  },
+  "widget_template": {
+    "template": "components/widgets/test-widget/widget.html"
+  }
+}

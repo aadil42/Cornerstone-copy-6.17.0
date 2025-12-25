@@ -1223,5 +1223,8 @@
         "focusTooltip-backgroundColor": "#313440"
       }
     }
+  ],
+   "widgets": [
+    "templates/components/widgets/test-widget"
   ]
 }
