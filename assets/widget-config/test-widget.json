@@ -1,0 +1,16 @@
+{
+  "name": "Test Widget",
+  "schema": [
+    {
+      "type": "text",
+      "label": "Title",
+      "id": "title"
+    },
+    {
+      "type": "color",
+      "label": "Background color",
+      "id": "bgColor",
+      "default": "#eeeeee"
+    }
+  ]
+}
