@@ -1,0 +1,11 @@
+{
+  "customLayouts": {
+    "brand": {},
+    "category": {},
+    "page": {},
+    "product": {}
+  },
+  "normalStoreUrl": "https://aadil42.mybigcommerce.com/",
+  "port": "3005",
+  "packageManager": "npm"
+}
