@@ -21,7 +21,10 @@
             </a>
         </li>
         {{#each children}}
+        <p>this is description</p>
             <li class="navPage-subMenu-item">
+                
+                {{{children.description}}}
                 {{!-- <p>level unknown</p> --}}
                 {{#if children}}
                     <a class="navPage-subMenu-action navPages-action has-subMenu{{#if is_active}} activePage{{/if}}"

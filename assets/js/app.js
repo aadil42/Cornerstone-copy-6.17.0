@@ -6,6 +6,12 @@ const getAccount = () => import('./theme/account');
 const getLogin = () => import('./theme/auth');
 const noop = null;
 
+
+// react imports
+import React from "react";
+import { createRoot } from "react-dom/client";
+import TestingReactComponent from "./components/TestingReactComponent";
+
 const pageClasses = {
     account_orderstatus: getAccount,
     account_order: getAccount,
@@ -96,3 +102,17 @@ window.stencilBootstrap = function stencilBootstrap(pageType, contextJSON = null
         },
     };
 };
+
+// this is where we are injecting our react components. 
+const testingReactComponentContainer = document.querySelector("#testingReactComponent");
+
+document.addEventListener('DOMContentLoaded', () => {
+if (testingReactComponentContainer) {
+    console.log('haha this is working bab', testingReactComponentContainer);
+    const root = createRoot(testingReactComponentContainer);
+    root.render(
+        <TestingReactComponent />
+    );
+    console.log('render complete');
+}
+});
