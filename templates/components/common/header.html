@@ -14,9 +14,7 @@
 {{{region name="custom_banner_widget--global"}}}
 
 <header class="header" role="banner">
-    <a href="#" class="mobileMenu-toggle" data-mobile-menu-toggle="menu">
-        <span class="mobileMenu-toggleIcon">Toggle menu</span>
-    </a>
+    {{!-- here we'll put handburger --}}
     {{> components/common/navigation}}
 
     {{#if page_type '===' 'default'}}
@@ -30,6 +28,10 @@
     {{/if}}
     <div class="navPages-container" id="menu" data-menu>
         {{> components/common/navigation-menu}}
+    </div>
+    <div class="custom-navPages-container" id="custom-menu" data-menu>
+        {{!-- {{> components/common/navigation-menu}} --}}
+        {{!-- here we'll inject react menu --}}
     </div>
     {{{region name="header_navigation_bottom--global"}}}
 </header>
