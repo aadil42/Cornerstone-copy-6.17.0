@@ -1,0 +1,12 @@
+{
+    "sample_data": {
+        "desktop": {
+            "title": "sampel title",
+            "image_url": "https://cdn11.bigcommerce.com/s-jjeyxhn1al/images/stencil/original/image-manager/miles-morales-3840x2160-10027.jpg?t=1769019500"
+        }, 
+        "mobile": {
+            "title": "sample mobile title",
+            "image_url": "https://cdn11.bigcommerce.com/s-jjeyxhn1al/images/stencil/original/image-manager/samurai-katana-warrior-immortal-sun-silhouette-black-3840x2160-7471.png?t=1769046662"
+        }
+    }
+}
