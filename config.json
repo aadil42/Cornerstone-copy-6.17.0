@@ -400,7 +400,19 @@
     "masterpass-button-color": "black",
     "paymentbuttons-provider-sorting": [
 
-    ]
+    ],
+    "custom_categories_navigation": {
+    "id_28": {
+        "desktop": {
+            "title": "sampel title",
+            "image_url": "https://cdn11.bigcommerce.com/s-jjeyxhn1al/images/stencil/original/image-manager/miles-morales-3840x2160-10027.jpg?t=1769019500"
+        }, 
+        "mobile": {
+            "title": "sample mobile title",
+            "image_url": "https://cdn11.bigcommerce.com/s-jjeyxhn1al/images/stencil/original/image-manager/samurai-katana-warrior-immortal-sun-silhouette-black-3840x2160-7471.png?t=1769046662"
+        }
+    }
+}
   },
   "read_only_files": [
     "/assets/scss/components/citadel",
