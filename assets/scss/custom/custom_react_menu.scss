@@ -1,0 +1,17 @@
+#custom-modal-id {
+  position: fixed;
+  top: 55px;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: white;
+  transform: translateX(-100%); /* Hidden to the left */
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+#custom-modal-id.open {
+  transform: translateX(0); /* Slide in */
+}

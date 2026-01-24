@@ -13,10 +13,9 @@
 
 {{{region name="custom_banner_widget--global"}}}
 
-<header class="header" role="banner">
-    {{!-- here we'll put handburger --}}
+<header id="custom-menu" class="header" role="banner">
     {{> components/common/navigation}}
-
+    
     <a href="#" class="custom-mobileMenu-toggle" data-mobile-menu-toggle="menu">
         <span class="mobileMenu-toggleIcon">Toggle menu</span>
     </a>
@@ -30,12 +29,13 @@
             {{> components/common/store-logo}}
         </div>
     {{/if}}
+    {{!-- this is desktop menu navigation --}}
     <div class="navPages-container" id="menu" data-menu>
         {{> components/common/navigation-menu}}
     </div>
+    {{!-- this is mobile menu navigation --}}
     <div class="custom-navPages-container" id="custom-menu" data-menu>
-        {{!-- {{> components/common/navigation-menu}} --}}
-        {{!-- here we'll inject react menu --}}
+        {{> components/common/modal/custom-modal}}
     </div>
     {{{region name="header_navigation_bottom--global"}}}
 </header>

@@ -103,10 +103,17 @@ window.stencilBootstrap = function stencilBootstrap(pageType, contextJSON = null
     };
 };
 
-// this is where we are injecting our react components. 
-const testingReactComponentContainer = document.querySelector("#testingReactComponent");
+// This is for toggling custom menu
+const hamburger = document.querySelector('.custom-mobileMenu-toggle');
+const modal = document.querySelector('#custom-modal-id');
 
-document.addEventListener('DOMContentLoaded', () => {
+hamburger.addEventListener('click', () => {
+  modal.classList.toggle('open');
+});
+
+// this is where we are injecting our react components. 
+const testingReactComponentContainer = document.querySelector("#custom-modal-id");
+
 if (testingReactComponentContainer) {
     console.log('haha this is working bab', testingReactComponentContainer);
     const root = createRoot(testingReactComponentContainer);
@@ -115,4 +122,3 @@ if (testingReactComponentContainer) {
     );
     console.log('render complete');
 }
-});
