@@ -210,7 +210,7 @@
 // 1. Animate lines from 'x' to hamburger
 // -----------------------------------------------------------------------------
 
-.mobileMenu-toggle {
+.custom-mobileMenu-toggle {
     @include square($header-toggle-width);
     display: inline-block;
     font-size: 0;
