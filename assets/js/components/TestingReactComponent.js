@@ -1,8 +1,9 @@
 import React from "react";
 
-export default function TestingReactComponent() {
+export default function TestingReactComponent({categories}) {
 
-console.log('this is from component');
+  console.log('categories from compo', categories);
+
   return (
     <div>
         <h3>

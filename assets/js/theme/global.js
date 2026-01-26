@@ -13,9 +13,14 @@ import cartPreview from './global/cart-preview';
 import carousel from './common/carousel';
 import svgInjector from './global/svg-injector';
 
+// these are react components to inject.
+import React from "react"; // this is needed here as import even though we're not using it.
+import { createRoot } from "react-dom/client";
+import TestingReactComponent from "../components/TestingReactComponent";
+
 export default class Global extends PageManager {
     onReady() {
-        const { cartId, secureBaseUrl } = this.context;
+        const { cartId, secureBaseUrl, categories } = this.context;
         cartPreview(secureBaseUrl, cartId);
         quickSearch();
         currencySelector(cartId);
@@ -25,5 +30,16 @@ export default class Global extends PageManager {
         menu();
         mobileMenuToggle();
         svgInjector();
+
+        this.initReactMobileMenu(categories);
+    }
+
+    initReactMobileMenu(categories) {
+
+        const testingReactComponentContainer = document.querySelector("#custom-modal-id");
+        if (testingReactComponentContainer) {
+            const root = createRoot(testingReactComponentContainer);
+            root.render(<TestingReactComponent categories={categories} />);
+        }
     }
 }

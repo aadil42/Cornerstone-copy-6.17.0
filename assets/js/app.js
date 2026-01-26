@@ -10,7 +10,6 @@ const noop = null;
 // react imports
 import React from "react";
 import { createRoot } from "react-dom/client";
-import TestingReactComponent from "./components/TestingReactComponent";
 
 const pageClasses = {
     account_orderstatus: getAccount,
@@ -110,15 +109,3 @@ const modal = document.querySelector('#custom-modal-id');
 hamburger.addEventListener('click', () => {
   modal.classList.toggle('open');
 });
-
-// this is where we are injecting our react components. 
-const testingReactComponentContainer = document.querySelector("#custom-modal-id");
-
-if (testingReactComponentContainer) {
-    console.log('haha this is working bab', testingReactComponentContainer);
-    const root = createRoot(testingReactComponentContainer);
-    root.render(
-        <TestingReactComponent />
-    );
-    console.log('render complete');
-}
