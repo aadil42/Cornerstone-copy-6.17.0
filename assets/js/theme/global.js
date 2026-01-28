@@ -20,7 +20,7 @@ import TestingReactComponent from "../components/TestingReactComponent";
 
 export default class Global extends PageManager {
     onReady() {
-        const { cartId, secureBaseUrl, categories } = this.context;
+        const { cartId, secureBaseUrl, categories, custom_categories_navigation } = this.context;
         cartPreview(secureBaseUrl, cartId);
         quickSearch();
         currencySelector(cartId);
@@ -31,15 +31,20 @@ export default class Global extends PageManager {
         mobileMenuToggle();
         svgInjector();
 
-        this.initReactMobileMenu(categories);
+        this.initReactMobileMenu({categories, custom_categories_navigation});
     }
 
-    initReactMobileMenu(categories) {
+    initReactMobileMenu({categories, custom_categories_navigation}) {
 
         const testingReactComponentContainer = document.querySelector("#custom-modal-id");
         if (testingReactComponentContainer) {
             const root = createRoot(testingReactComponentContainer);
-            root.render(<TestingReactComponent categories={categories} />);
+            root.render(
+            <TestingReactComponent 
+            categories={categories} 
+            custom_categories_navigation={custom_categories_navigation}
+            menuTitle="Menu"
+            />);
         }
     }
 }
