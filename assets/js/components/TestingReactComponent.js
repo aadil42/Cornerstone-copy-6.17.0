@@ -1,6 +1,7 @@
 import testData from "./testData";
 import computeCategoriesMenu from "./computeCategoriesMenu";
 import isObjEmpty from "./isObjEmpty";
+import getBigCommerceUrl from "./getBigCommerceUrl";
 
 import React, { useMemo, useState, useEffect } from "react";
 import Drawer from "rc-drawer";
@@ -29,7 +30,6 @@ export default function TestingReactComponent({categories, custom_categories_nav
   },[]);
 
   const current = stack[stack.length - 1];
-  const level = stack.length - 1;
 
   return (
     <Drawer
@@ -55,6 +55,24 @@ export default function TestingReactComponent({categories, custom_categories_nav
             </li>
           ))}
         </ul>
+        <div class="mobile-menu-imgs">
+          {stack.length > 1 && stack[1].items &&
+            stack[1].items.map((item) => {
+              if (item && item.bc && item.bc.customImages && item.bc.customImages.mobile) {
+                return <img 
+                  src={item.bc.customImages.mobile}
+                  alt={item.bc.customImages.mobile.alt}
+                />
+              }
+              if (item && item.bc && item.bc.image && item.bc.image) {
+                return <img 
+                  src={getBigCommerceUrl(item.bc.image, 350)}
+                  alt={item.bc.image.alt}
+                />
+              }
+            })
+          }
+        </div>
       </div>
     </Drawer>
 
