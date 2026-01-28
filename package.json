@@ -22,6 +22,7 @@
     "jstree": "^3.3.12",
     "lazysizes": "5.2.2",
     "lodash": "^4.17.21",
+    "lucide-react": "^0.563.0",
     "nod-validate": "^2.0.12",
     "object-fit-images": "^3.2.4",
     "rc-drawer": "^7.3.0",

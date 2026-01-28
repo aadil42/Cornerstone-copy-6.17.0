@@ -2,10 +2,12 @@ import testData from "./testData";
 import computeCategoriesMenu from "./computeCategoriesMenu";
 import isObjEmpty from "./isObjEmpty";
 import getBigCommerceUrl from "./getBigCommerceUrl";
+import { ChevronLeft } from 'lucide-react';
 
 import React, { useMemo, useState, useEffect } from "react";
 import Drawer from "rc-drawer";
 import "rc-drawer/assets/index.css";
+import "./mobileMenuStyles.css";
 
 export default function TestingReactComponent({categories, custom_categories_navigation, menuTitle}) {
   
@@ -41,7 +43,7 @@ export default function TestingReactComponent({categories, custom_categories_nav
       showMask={false}
       getContainer={false} >
       <div style={{ padding: "1rem" }}>
-        {stack.length > 1 && <button onClick={goBack}>Back</button>}
+        {stack.length > 1 && <button class="mobile-menu-back-btn" onClick={goBack}><ChevronLeft size={24} color="#333" strokeWidth={3} /> Back</button>}
         <h3>{current.title}</h3>
         <ul style={{ listStyle: "none", padding: 0 }}>
           {current.items.map((item, idx) => (
