@@ -5,7 +5,6 @@ export default function computeCategoriesMenu({
 
     return categories.map((cat) => {
         const custom = custom_categories_navigation[`id_${cat.id}`];
-
         const node = {
             label: custom?.desktop?.title || cat.name,
             link: cat.url,
