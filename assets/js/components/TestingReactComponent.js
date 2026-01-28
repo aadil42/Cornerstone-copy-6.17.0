@@ -67,14 +67,17 @@ export default function TestingReactComponent({categories, custom_categories_nav
             stack[1].items.map((item) => {
               if (item.bc?.customImages?.mobile) {
                 return <div key={uuidv4()}>
-                          <img 
-                            src={item.bc.customImages.mobile}
-                            alt={item.bc.customImages.mobile.alt}
-                          />
+                          
                           <a
                             href={item.link}
                             class="mobile-menu-img-link-text"
                           >
+                            
+                            <img 
+                            src={item.bc.customImages.mobile}
+                            alt={item.bc.customImages.mobile.alt}
+                          />
+
                             {item.label}
                             <span class="mobile-menu-item-arrow">→</span>
                           </a>
@@ -82,14 +85,16 @@ export default function TestingReactComponent({categories, custom_categories_nav
               }
               if (!isEmptyObject(item.bc?.image)) {
               return  <div key={uuidv4()}>
-                        <img 
-                        src={getBigCommerceUrl(item.bc.image, 400)}
-                        alt={item.bc.image.alt}
-                      />
+                        
                       <a
                         href={item.link}
                         class="mobile-menu-img-link-text"
                       >
+                        <img 
+                          src={getBigCommerceUrl(item.bc.image, 400)}
+                          alt={item.bc.image.alt}
+                        />
+
                         {item.label}
                         <span class="mobile-menu-item-arrow">→</span>
                       </a>
