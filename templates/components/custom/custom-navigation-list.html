@@ -9,19 +9,30 @@
     </i>
 </a>
 <div class="navPage-subMenu" id="navPages-{{id}}" aria-hidden="true" tabindex="-1">
-    <ul class="navPage-subMenu-list">
-        <li class="navPage-subMenu-item navPage-subMenu-item-first">
+
+        <div class="navPage-subMenu-item-first">
             
             <a class="navPage-subMenu-action navPages-action"
                href="{{url}}"
                aria-label="{{lang 'category.view_all.name' category=name}}"
             >
-                <h1></h1>
-                {{lang 'category.view_all.name' category=name}}
+                {{name}}
             </a>
-        </li>
+        </div>
+
+    <ul class="navPage-subMenu-list">
+        {{!-- <li class="navPage-subMenu-item navPage-subMenu-item-first">
+            
+            <a class="navPage-subMenu-action navPages-action"
+               href="{{url}}"
+               aria-label="{{lang 'category.view_all.name' category=name}}"
+            >
+                {{name}}
+            </a>
+        </li> --}}
         {{#each children}}
-        <p>this is description</p>
+
+            {{#unless image.data}}
             <li class="navPage-subMenu-item">
                 
                 {{{children.description}}}
@@ -65,7 +76,9 @@
                     </a>
                 {{/if}}
             </li>
+            {{/unless}}
         {{/each}}
+        
     </ul>
 </div>
 {{else}}

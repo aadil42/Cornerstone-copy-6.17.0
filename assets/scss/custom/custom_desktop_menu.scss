@@ -1,0 +1,19 @@
+.navPages a.navPage-subMenu-action.navPages-action.has-subMenu {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    position: relative;
+    cursor: pointer;
+    line-height: 1;
+    display: block;
+    border-bottom: none;
+}
+
+.navPages a.navPage-subMenu-action.navPages-action.has-subMenu::after {
+    content: "";
+    display: block;
+    width: 25.008px;
+    border-top: 1.008px solid #da1a32;
+    margin: 12px 0 4.8px;
+}

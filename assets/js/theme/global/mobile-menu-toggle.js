@@ -103,6 +103,7 @@ export class MobileMenuToggle {
     }
 
     toggle() {
+        console.log('toggling...');
         if (this.isOpen) {
             this.hide();
         } else {
@@ -111,6 +112,7 @@ export class MobileMenuToggle {
     }
 
     show() {
+        console.log('showing...');
         this.$body.addClass('has-activeNavPages');
 
         this.$toggle
@@ -128,7 +130,7 @@ export class MobileMenuToggle {
     }
 
     hide() {
-        this.$body.removeClass('has-activeNavPages');
+        console.log('hiding...')
 
         this.$toggle
             .removeClass('is-open')
