@@ -1,3 +1,5 @@
+
+
 {{#if children}}
 <a class="navPages-action has-subMenu{{#if is_active}} activePage{{/if}}"
    href="{{url}}"
@@ -8,7 +10,7 @@
         <svg><use href="#icon-chevron-down" /></svg>
     </i>
 </a>
-<div class="navPage-subMenu" id="navPages-{{id}}" aria-hidden="true" tabindex="-1">
+<div class="navPage-subMenu" id="navPages-{{id}}" aria-hidden="false" tabindex="-1">
 
         <div class="navPage-subMenu-item-first">
             
@@ -78,14 +80,39 @@
             </li>
             {{/unless}}
         {{/each}}
+
+    {{#each children}}
+    {{!-- Check if this category has custom config using concat to build key --}}
+    {{#with (lookup ../theme_settings.custom_categories_navigation (concat "id_" id)) as |customConfig|}}
         
+        {{!-- Config exists, use desktop settings --}}
+        {{#if customConfig.desktop.image_url}}
+            <a href="{{url}}" class="category-nav-item">
+                <img 
+                    src="{{customConfig.desktop.image_url}}" 
+                    alt="{{customConfig.desktop.alt}}"
+                >
+                <h3>{{customConfig.desktop.title}}</h3>
+            </a>
+        {{/if}}
+        
+    {{/with}}
+    
+    {{!-- If no config found, check child's own data --}}
+    {{#unless (lookup ../theme_settings.custom_categories_navigation (concat "id_" id))}}
+        {{#if image.data}}
+            <a href="{{url}}" class="category-nav-item">
+                <img 
+                    src="{{getImage image size='367×248'}}"
+                    alt="{{image.alt}}"
+                >
+                <h3>{{name}}</h3>
+            </a>
+        {{/if}}
+    {{/unless}}
+    
+{{/each}}
+
     </ul>
 </div>
-{{else}}
-<a class="navPages-action{{#if is_active}} activePage{{/if}}"
-   href="{{url}}"
-   aria-label="{{name}}"
->
-    {{name}}
-</a>
 {{/if}}

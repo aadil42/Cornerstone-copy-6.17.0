@@ -1,3 +1,8 @@
+
+<h1>
+    from header --
+    {{theme_settings.custom_categories_navigation.id_28.desktop.title}}
+</h1>
 <a href="#main-content" class="skip-to-main-link">{{lang 'header.skip_to_main'}}</a>
 {{#if banners.top}}
 <div class="banners" data-banner-location="top">
@@ -31,7 +36,7 @@
     {{/if}}
     {{!-- this is desktop menu navigation --}}
     <div class="navPages-container" id="menu" data-menu>
-        {{> components/common/navigation-menu}}
+        {{> components/common/navigation-menu theme_settings=theme_settings}}
     </div>
     {{!-- this is mobile menu navigation --}}
     <div class="custom-navPages-container" id="custom-menu" data-menu>

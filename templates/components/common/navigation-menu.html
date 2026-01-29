@@ -1,3 +1,4 @@
+
 <nav class="navPages">
     <div class="navPages-quickSearch">
         {{> components/common/quick-search name='nav-menu-quick-search'}}
@@ -6,7 +7,7 @@
         {{#each categories}}
             <li class="navPages-item">
             {{#if ../theme_settings.navigation_design '===' 'simple'}}
-                {{> components/custom/custom-navigation-list}}
+                {{> components/custom/custom-navigation-list theme_settings=../theme_settings}}
                 {{!-- {{> components/common/navigation-list}} --}}
             {{/if}}
             {{#if ../theme_settings.navigation_design '===' 'alternate'}}
