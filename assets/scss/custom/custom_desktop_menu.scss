@@ -25,6 +25,7 @@ ul.navPage-subMenu-list {
 
 ul.navPages-list {
     position: relative;
+    width: 80%;
 }
 
 .navPage-subMenu-item {
@@ -59,4 +60,71 @@ p.custom-image-navPage-subMenu-item-title-text {
 
 li.navPage-subMenu-item.custom-images-navPage-subMenu-item {
     min-width: 120px;
+}
+
+
+
+.navPage-subMenu-item-rest{
+  display: grid;
+  grid-template-columns: 3fr 1.5fr;
+}
+
+.navPage-subMenu-item-rest-first::before, 
+.navPage-subMenu-item-rest-first::after {
+  content: none !important;
+  display: none !important;
+}
+
+
+.navPage-subMenu-item-rest-first {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: start !important;
+}
+
+a.navPage-subMenu-action.navPages-action.has-subMenu {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+
+.navPage-subMenu-action-text {
+    display: inline-flex;
+    align-items: center;
+}
+
+
+.navPage-subMenu-action-text-right-icon {
+    width: 20px;
+    height: 20px; 
+}
+
+.navPages-action svg {
+  fill: #da1a32;
+  stroke: none;
+}
+
+.navPage-subMenu-action-text {
+  font-size: 18px
+}
+
+.navPages-action svg {
+  fill: #da1a32;
+  stroke: none;
+}
+
+a.navPage-childList-action.navPages-action {
+    font-weight: 600; 
+    line-height: 1.25;
+}
+
+p.custom-image-navPage-subMenu-item-title-text {
+    font-weight: 600; 
+    font-size: 16px;
+}
+
+.custom-image-navPage-subMenu-item-title-text {
+    font-size: 16px;
+    font-weight: 600;
 }

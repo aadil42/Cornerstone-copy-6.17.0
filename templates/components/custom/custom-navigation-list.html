@@ -6,9 +6,7 @@
    data-collapsible="navPages-{{id}}"
 >
     {{name}}
-    <i class="icon navPages-action-moreIcon" aria-hidden="true">
-        <svg><use href="#icon-chevron-down" /></svg>
-    </i>
+
 </a>
 <div class="navPage-subMenu" id="navPages-{{id}}" aria-hidden="false" tabindex="-1">
 
@@ -18,100 +16,116 @@
                href="{{url}}"
                aria-label="{{lang 'category.view_all.name' category=name}}"
             >
-                {{name}}
+                <span class="navPage-subMenu-action-text">
+                            {{name}}
+                    <svg class="navPage-subMenu-action-text-right-icon" style="fill: red;">
+                        <use href="#icon-chevron-right" />
+                    </svg>
+                </span>
             </a>
         </div>
 
-<ul class="navPage-subMenu-list">
-        {{!-- display all the items without image first. --}}
-    {{#each children}}
-        {{#unless image.data}}
-        <li class="navPage-subMenu-item">
-            
-            {{{children.description}}}
-            {{!-- <p>level unknown</p> --}}
-            {{#if children}}
-                <a class="navPage-subMenu-action navPages-action has-subMenu{{#if is_active}} activePage{{/if}}"
-                    href="{{url}}"
-                    aria-label="{{name}}"
-                >
-                    {{name}}
-                    <span class="collapsible-icon-wrapper"
-                        data-collapsible="navPages-{{id}}"
-                        data-collapsible-disabled-breakpoint="medium"
-                        data-collapsible-disabled-state="open"
-                        data-collapsible-enabled-state="closed"
-                    >
-                        
-                        <i class="icon navPages-action-moreIcon" aria-hidden="true">
-                            <svg><use href="#icon-chevron-down" /></svg>
-                        </i>
-                    </span>
-                </a>
-                <ul class="navPage-childList" id="navPages-{{id}}">
-                    {{#each children}}
-                    <li class="navPage-childList-item">
-                        <a class="navPage-childList-action navPages-action{{#if is_active}} activePage{{/if}}"
+      <div class="navPage-subMenu-item-rest">
+        <ul class="navPage-subMenu-item-rest-first">
+                {{!-- display all the items without image first. --}}
+            {{#each children}}
+                {{#unless image.data}}
+                <li class="navPage-subMenu-item">
+                    
+                    {{{children.description}}}
+                    {{!-- <p>level unknown</p> --}}
+                    {{#if children}}
+                        <a class="navPage-subMenu-action navPages-action has-subMenu{{#if is_active}} activePage{{/if}}"
+                            href="{{url}}"
+                            aria-label="{{name}}"
+                        >
+                            <span class="navPage-subMenu-action-text">
+                            {{name}}
+                                <svg class="navPage-subMenu-action-text-right-icon" style="fill: red;">
+                                    <use href="#icon-chevron-right" />
+                                </svg>
+                            </span>
+                        </a>
+                        <ul class="navPage-childList" id="navPages-{{id}}">
+                            {{#each children}}
+                            <li class="navPage-childList-item">
+                                <a class="navPage-childList-action navPages-action{{#if is_active}} activePage{{/if}}"
+                                    href="{{url}}"
+                                    aria-label="{{name}}"
+                                >
+                                    {{name}}
+                                </a>
+                            </li>
+                            {{/each}}
+                        </ul>
+                    {{else}}
+                        <a class="navPage-subMenu-action navPages-action{{#if is_active}} activePage{{/if}}"
                             href="{{url}}"
                             aria-label="{{name}}"
                         >
                             {{name}}
                         </a>
-                    </li>
-                    {{/each}}
-                </ul>
-            {{else}}
-                <a class="navPage-subMenu-action navPages-action{{#if is_active}} activePage{{/if}}"
-                    href="{{url}}"
-                    aria-label="{{name}}"
-                >
-                    {{name}}
-                </a>
-            {{/if}}
-        </li>
-        {{/unless}}
-    {{/each}}
+                    {{/if}}
+                </li>
+                {{/unless}}
+            {{/each}}
+        </ul>
 
-  <li class="navPage-subMenu-item custom-images-navPage-subMenu-item">
-    <ul class="navPage-childList custom-images-navPage-subMenu-list">
-    {{!-- display all the items with images here.  --}}
-    {{#each children}}
-  
-    {{!-- Check if this category has custom config using concat to build key --}}
-    {{#with (lookup ../theme_settings.custom_categories_navigation (concat "id_" id)) as |customConfig|}}
-        {{!-- Config exists, use desktop settings --}}
-        {{#if customConfig.desktop.image_url}}
-        <li class="navPage-subMenu-item">
-            <a href="{{url}}" class="category-nav-item">
-                <img 
-                    src="{{customConfig.desktop.image_url}}" 
-                    alt="{{customConfig.desktop.alt}}"
-                >
-                <p class="custom-image-navPage-subMenu-item-title-text">{{customConfig.desktop.title}}</p>
-            </a>
-        </li>
-        {{/if}}
-        
-    {{/with}}
-    
-    {{!-- If no config found, check child's own data --}}
-    {{#unless (lookup ../theme_settings.custom_categories_navigation (concat "id_" id))}}
-        {{#if image.data}}
-        <li class="navPage-subMenu-item">
-            <a href="{{url}}" class="category-nav-item">
-                <img 
-                    src="{{getImage image size='367×248'}}"
-                    alt="{{image.alt}}"
-                >
-                <p class="custom-image-navPage-subMenu-item-title-text">{{name}}</p>
-            </a>
-        </li>
-        {{/if}}
-    {{/unless}}
-    
-{{/each}}
-</ul>
-</li>
-    </ul>
+        <ul class="navPage-subMenu-item-rest-second">
+            <li class="navPage-subMenu-item custom-images-navPage-subMenu-item">
+                <ul class="navPage-childList custom-images-navPage-subMenu-list">
+                {{!-- display all the items with images here.  --}}
+                {{#each children}}
+            
+                {{!-- Check if this category has custom config using concat to build key --}}
+                {{#with (lookup ../theme_settings.custom_categories_navigation (concat "id_" id)) as |customConfig|}}
+                    {{!-- Config exists, use desktop settings --}}
+                    {{#if customConfig.desktop.image_url}}
+                    <li class="navPage-subMenu-item">
+                        <a href="{{url}}" class="category-nav-item">
+                            <img 
+                                src="{{customConfig.desktop.image_url}}" 
+                                alt="{{customConfig.desktop.alt}}"
+                            >
+                                <span class="custom-image-navPage-subMenu-item-title-text navPage-subMenu-action-text">
+                                {{customConfig.desktop.title}}
+                                <svg class="navPage-subMenu-action-text-right-icon" style="fill: red;">
+                                    <use href="#icon-chevron-right" />
+                                </svg>
+                            </span>
+                            
+                        </a>
+                    </li>
+                    {{/if}}
+                    
+                {{/with}}
+                
+                {{!-- If no config found, check child's own data --}}
+                {{#unless (lookup ../theme_settings.custom_categories_navigation (concat "id_" id))}}
+                    {{#if image.data}}
+                    <li class="navPage-subMenu-item">
+                        <a href="{{url}}" class="category-nav-item">
+                            <img 
+                                src="{{getImage image size='367×248'}}"
+                                alt="{{image.alt}}"
+                            >
+                                
+                            <span class="custom-image-navPage-subMenu-item-title-text navPage-subMenu-action-text">
+                            {{name}}
+                                <svg class="navPage-subMenu-action-text-right-icon" style="fill: red;">
+                                    <use href="#icon-chevron-right" />
+                                </svg>
+                            </span>
+                            
+                        </a>
+                    </li>
+                    {{/if}}
+                {{/unless}}
+            {{/each}}
+            </ul>
+            </li>
+        </ul>
+      </div>
+
 </div>
 {{/if}}
