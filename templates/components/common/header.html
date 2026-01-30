@@ -1,8 +1,3 @@
-
-<h1>
-    from header --
-    {{theme_settings.custom_categories_navigation.id_28.desktop.title}}
-</h1>
 <a href="#main-content" class="skip-to-main-link">{{lang 'header.skip_to_main'}}</a>
 {{#if banners.top}}
 <div class="banners" data-banner-location="top">
@@ -18,25 +13,26 @@
 
 {{{region name="custom_banner_widget--global"}}}
 
-<header id="custom-menu" class="header" role="banner">
-    {{> components/common/navigation}}
-    
+<header id="custom-menu" class="header" role="banner">    
     <a href="#" class="custom-mobileMenu-toggle" data-mobile-menu-toggle="menu">
         <span class="mobileMenu-toggleIcon">Toggle menu</span>
     </a>
 
-    {{#if page_type '===' 'default'}}
-        <h1 class="header-logo header-logo--{{theme_settings.logo-position}}">
-            {{> components/common/store-logo}}
-        </h1>
-    {{else}}
-        <div class="header-logo header-logo--{{theme_settings.logo-position}}">
-            {{> components/common/store-logo}}
-        </div>
-    {{/if}}
     {{!-- this is desktop menu navigation --}}
     <div class="navPages-container" id="menu" data-menu>
+            {{#if page_type '===' 'default'}}
+                <h1 class="header-logo header-logo--{{theme_settings.logo-position}}">
+                    {{> components/common/store-logo}}
+                </h1>
+            {{else}}
+                <div class="header-logo header-logo--{{theme_settings.logo-position}}">
+                    {{> components/common/store-logo}}
+                </div>
+            {{/if}}
+
         {{> components/common/navigation-menu theme_settings=theme_settings}}
+
+        {{> components/common/navigation}}
     </div>
     {{!-- this is mobile menu navigation --}}
     <div class="custom-navPages-container" id="custom-menu" data-menu>
