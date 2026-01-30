@@ -22,78 +22,74 @@
             </a>
         </div>
 
-    <ul class="navPage-subMenu-list">
-        {{!-- <li class="navPage-subMenu-item navPage-subMenu-item-first">
-            
-            <a class="navPage-subMenu-action navPages-action"
-               href="{{url}}"
-               aria-label="{{lang 'category.view_all.name' category=name}}"
-            >
-                {{name}}
-            </a>
-        </li> --}}
-        {{#each children}}
-
-            {{#unless image.data}}
-            <li class="navPage-subMenu-item">
-                
-                {{{children.description}}}
-                {{!-- <p>level unknown</p> --}}
-                {{#if children}}
-                    <a class="navPage-subMenu-action navPages-action has-subMenu{{#if is_active}} activePage{{/if}}"
-                       href="{{url}}"
-                       aria-label="{{name}}"
-                    >
-                        {{name}}
-                        <span class="collapsible-icon-wrapper"
-                            data-collapsible="navPages-{{id}}"
-                            data-collapsible-disabled-breakpoint="medium"
-                            data-collapsible-disabled-state="open"
-                            data-collapsible-enabled-state="closed"
-                        >
-                            
-                            <i class="icon navPages-action-moreIcon" aria-hidden="true">
-                                <svg><use href="#icon-chevron-down" /></svg>
-                            </i>
-                        </span>
-                    </a>
-                    <ul class="navPage-childList" id="navPages-{{id}}">
-                        {{#each children}}
-                        <li class="navPage-childList-item">
-                            <a class="navPage-childList-action navPages-action{{#if is_active}} activePage{{/if}}"
-                               href="{{url}}"
-                               aria-label="{{name}}"
-                            >
-                                {{name}}
-                            </a>
-                        </li>
-                        {{/each}}
-                    </ul>
-                {{else}}
-                    <a class="navPage-subMenu-action navPages-action{{#if is_active}} activePage{{/if}}"
-                       href="{{url}}"
-                       aria-label="{{name}}"
-                    >
-                        {{name}}
-                    </a>
-                {{/if}}
-            </li>
-            {{/unless}}
-        {{/each}}
-
+<ul class="navPage-subMenu-list">
+        {{!-- display all the items without image first. --}}
     {{#each children}}
+        {{#unless image.data}}
+        <li class="navPage-subMenu-item">
+            
+            {{{children.description}}}
+            {{!-- <p>level unknown</p> --}}
+            {{#if children}}
+                <a class="navPage-subMenu-action navPages-action has-subMenu{{#if is_active}} activePage{{/if}}"
+                    href="{{url}}"
+                    aria-label="{{name}}"
+                >
+                    {{name}}
+                    <span class="collapsible-icon-wrapper"
+                        data-collapsible="navPages-{{id}}"
+                        data-collapsible-disabled-breakpoint="medium"
+                        data-collapsible-disabled-state="open"
+                        data-collapsible-enabled-state="closed"
+                    >
+                        
+                        <i class="icon navPages-action-moreIcon" aria-hidden="true">
+                            <svg><use href="#icon-chevron-down" /></svg>
+                        </i>
+                    </span>
+                </a>
+                <ul class="navPage-childList" id="navPages-{{id}}">
+                    {{#each children}}
+                    <li class="navPage-childList-item">
+                        <a class="navPage-childList-action navPages-action{{#if is_active}} activePage{{/if}}"
+                            href="{{url}}"
+                            aria-label="{{name}}"
+                        >
+                            {{name}}
+                        </a>
+                    </li>
+                    {{/each}}
+                </ul>
+            {{else}}
+                <a class="navPage-subMenu-action navPages-action{{#if is_active}} activePage{{/if}}"
+                    href="{{url}}"
+                    aria-label="{{name}}"
+                >
+                    {{name}}
+                </a>
+            {{/if}}
+        </li>
+        {{/unless}}
+    {{/each}}
+
+  <li class="navPage-subMenu-item custom-images-navPage-subMenu-item">
+    <ul class="navPage-childList custom-images-navPage-subMenu-list">
+    {{!-- display all the items with images here.  --}}
+    {{#each children}}
+  
     {{!-- Check if this category has custom config using concat to build key --}}
     {{#with (lookup ../theme_settings.custom_categories_navigation (concat "id_" id)) as |customConfig|}}
-        
         {{!-- Config exists, use desktop settings --}}
         {{#if customConfig.desktop.image_url}}
+        <li class="navPage-subMenu-item">
             <a href="{{url}}" class="category-nav-item">
                 <img 
                     src="{{customConfig.desktop.image_url}}" 
                     alt="{{customConfig.desktop.alt}}"
                 >
-                <h3>{{customConfig.desktop.title}}</h3>
+                <p class="custom-image-navPage-subMenu-item-title-text">{{customConfig.desktop.title}}</p>
             </a>
+        </li>
         {{/if}}
         
     {{/with}}
@@ -101,18 +97,21 @@
     {{!-- If no config found, check child's own data --}}
     {{#unless (lookup ../theme_settings.custom_categories_navigation (concat "id_" id))}}
         {{#if image.data}}
+        <li class="navPage-subMenu-item">
             <a href="{{url}}" class="category-nav-item">
                 <img 
                     src="{{getImage image size='367×248'}}"
                     alt="{{image.alt}}"
                 >
-                <h3>{{name}}</h3>
+                <p class="custom-image-navPage-subMenu-item-title-text">{{name}}</p>
             </a>
+        </li>
         {{/if}}
     {{/unless}}
     
 {{/each}}
-
+</ul>
+</li>
     </ul>
 </div>
 {{/if}}

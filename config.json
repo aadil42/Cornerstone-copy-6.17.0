@@ -398,23 +398,21 @@
     "afterpay-button-color": "black-mint",
     "amazon-button-color": "Gold",
     "masterpass-button-color": "black",
-    "paymentbuttons-provider-sorting": [
-
-    ],
+    "paymentbuttons-provider-sorting": [],
     "custom_categories_navigation": {
-    "id_28": {
+      "id_28": {
         "desktop": {
-            "title": "sampel title babadi",
-            "image_url": "https://cdn11.bigcommerce.com/s-jjeyxhn1al/images/stencil/original/image-manager/miles-morales-3840x2160-10027.jpg?t=1769019500",
-            "alt": "haha alt text desktop"
-        }, 
+          "title": "sampel title babadi",
+          "image_url": "https://cdn11.bigcommerce.com/s-jjeyxhn1al/images/stencil/original/image-manager/miles-morales-3840x2160-10027.jpg?t=1769019500",
+          "alt": "haha alt text desktop"
+        },
         "mobile": {
-            "title": "sample mobile title",
-            "image_url": "https://cdn11.bigcommerce.com/s-jjeyxhn1al/images/stencil/original/image-manager/samurai-katana-warrior-immortal-sun-silhouette-black-3840x2160-7471.png?t=1769046662",
-            "alt": "haha alt text mobile"
+          "title": "sample mobile title",
+          "image_url": "https://cdn11.bigcommerce.com/s-jjeyxhn1al/images/stencil/original/image-manager/samurai-katana-warrior-immortal-sun-silhouette-black-3840x2160-7471.png?t=1769046662",
+          "alt": "haha alt text mobile"
         }
+      }
     }
-}
   },
   "read_only_files": [
     "/assets/scss/components/citadel",
@@ -452,8 +450,7 @@
           "home_garden"
         ]
       },
-      "images": {
-      },
+      "images": {},
       "settings": {
         "channels": [
           {
@@ -810,9 +807,19 @@
         "afterpay-button-color": "black-mint",
         "amazon-button-color": "Gold",
         "masterpass-button-color": "black",
-        "paymentbuttons-provider-sorting": [
-
-        ]
+        "paymentbuttons-provider-sorting": [],
+        "custom_categories_navigation": {
+          "sample_data": {
+            "desktop": {
+              "title": "sampel title",
+              "image_url": "https://cdn11.bigcommerce.com/s-jjeyxhn1al/images/stencil/original/image-manager/miles-morales-3840x2160-10027.jpg?t=1769019500"
+            },
+            "mobile": {
+              "title": "sample mobile title",
+              "image_url": "https://cdn11.bigcommerce.com/s-jjeyxhn1al/images/stencil/original/image-manager/samurai-katana-warrior-immortal-sun-silhouette-black-3840x2160-7471.png?t=1769046662"
+            }
+          }
+        }
       }
     },
     {
@@ -1238,7 +1245,7 @@
       }
     }
   ],
-   "widgets": [
+  "widgets": [
     "templates/components/widgets/test-widget"
   ]
 }
