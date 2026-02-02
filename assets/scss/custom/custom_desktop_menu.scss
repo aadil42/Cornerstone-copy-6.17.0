@@ -32,10 +32,27 @@ ul.navPages-list {
   padding: 0px !important;
 }
 
-.navPage-subMenu.is-open {
-    width: 125%;
-    padding-left: 50px !important;
+@media (min-width: 800px) {
+  .navPage-subMenu.is-open {
+      width: 180%;
+      padding-left: 50px !important;
+  }
 }
+
+@media (min-width: 850px) {
+  .navPage-subMenu.is-open {
+      width: 150%;
+      padding-left: 50px !important;
+  }
+}
+
+@media (min-width: 950px) {
+  .navPage-subMenu.is-open {
+      width: 125%;
+      padding-left: 50px !important;
+  }
+}
+
 
 .navPage-subMenu-item:last-child .navPage-childList {
   display: grid;
