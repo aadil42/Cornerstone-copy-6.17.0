@@ -145,3 +145,21 @@ p.custom-image-navPage-subMenu-item-title-text {
     font-size: 16px;
     font-weight: 600;
 }
+
+.navPages-action.is-open {
+  background-color: white;
+  border-bottom: 1px solid #da1a32;
+}
+
+.navPage-subMenu.is-open {
+    top: 80px;
+}
+
+.navPages-list .navPages-item {
+    height: 100%;
+    display: flex;
+}
+
+.navPages-list .navPages-action {
+  place-content: center;
+}
