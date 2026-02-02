@@ -109,3 +109,11 @@ const modal = document.querySelector('#custom-modal-id');
 hamburger.addEventListener('click', () => {
   modal.classList.toggle('open');
 });
+
+// this is for toggling quick search
+const quickSearchCloseBtn = document.querySelector('#quickSearch-icon-close');
+const quickSearchModal = document.querySelector("#quickSearch");
+
+quickSearchCloseBtn.addEventListener('click', () => {
+    quickSearchModal.classList.remove("is-open");
+});

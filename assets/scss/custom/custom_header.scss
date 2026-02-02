@@ -45,3 +45,29 @@ ul.navPages-list {
     align-items: center;
 }
 
+#quickSearch {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+}
+
+#quickSearch {
+    display: grid;
+    grid-template-columns: 1fr 50px;
+}
+
+svg#quickSearch-icon-close {
+    height: 75px;
+    width: 75px;
+}
+
+#quickSearch .container {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+#quickSearch .container .form {
+    margin: 0px;
+    min-width: 70%;
+}
