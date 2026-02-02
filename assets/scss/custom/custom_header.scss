@@ -1,8 +1,10 @@
-.navPages-container {
-    display: grid;
-    grid-template-columns: 80px 1fr 275px;
-    padding-left: 30px;
-    height: 80px;
+@media (min-width: 800px) {
+    .navPages-container {
+        display: grid;
+        grid-template-columns: 80px 1fr 275px;
+        padding-left: 30px;
+        height: 80px;
+    }
 }
 
 .header-logo {
