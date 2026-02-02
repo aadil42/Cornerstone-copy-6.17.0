@@ -1,4 +1,57 @@
 .navPages-container {
     display: grid;
-    grid-template-columns: 1fr 5fr 2fr;
+    grid-template-columns: .5fr 8fr 3fr;
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 80px;
 }
+
+.header-logo {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 100px;
+    width: 100px;
+    position: relative;
+}
+
+.header-logo__link {
+    width: 100%;
+    width: 100px;
+    position: absolute;
+    top: 15px;
+}
+
+.header-logo-image {
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+.navUser {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.navPages {
+    height: 80px;
+}
+
+.navPages-list {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navPages-list.navPages-list--user {
+    display: none;
+}
+
+.navUser {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
