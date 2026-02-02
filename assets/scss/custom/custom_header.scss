@@ -61,6 +61,10 @@ svg#quickSearch-icon-close {
     width: 75px;
 }
 
+#quickSearch-icon-close:hover {
+    cursor: pointer;
+}
+
 #quickSearch .container {
     display: flex; 
     justify-content: center;
