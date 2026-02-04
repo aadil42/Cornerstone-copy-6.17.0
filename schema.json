@@ -71,64 +71,89 @@
             "value": "Google_Source+Sans+Pro_400"
           },
           {
-            "group": "i18n.BrandonGrotesque",
-            "label": "i18n.BrandonGrotesqueThin",
-            "value": "Brandon_Grotesque_100"
+            "group": "i18n.Poppins",
+            "label": "i18n.PoppinsThin",
+            "value": "Poppins_100"
           },
           {
-            "group": "i18n.BrandonGrotesque",
-            "label": "i18n.BrandonGrotesqueThinItalic",
-            "value": "Brandon_Grotesque_100_italic"
+            "group": "i18n.Poppins",
+            "label": "i18n.PoppinsThinItalic",
+            "value": "Poppins_100_italic"
           },
           {
-            "group": "i18n.BrandonGrotesque",
-            "label": "i18n.BrandonGrotesqueLight",
-            "value": "Brandon_Grotesque_300"
+            "group": "i18n.Poppins",
+            "label": "i18n.PoppinsExtraLight",
+            "value": "Poppins_200"
           },
           {
-            "group": "i18n.BrandonGrotesque",
-            "label": "i18n.BrandonGrotesqueLightItalic",
-            "value": "Brandon_Grotesque_300_italic"
+            "group": "i18n.Poppins",
+            "label": "i18n.PoppinsExtraLightItalic",
+            "value": "Poppins_200_italic"
           },
           {
-            "group": "i18n.BrandonGrotesque",
-            "label": "i18n.BrandonGrotesqueRegular",
-            "value": "Brandon_Grotesque_400"
+            "group": "i18n.Poppins",
+            "label": "i18n.PoppinsLight",
+            "value": "Poppins_300"
           },
           {
-            "group": "i18n.BrandonGrotesque",
-            "label": "i18n.BrandonGrotesqueRegularItalic",
-            "value": "Brandon_Grotesque_400_italic"
+            "group": "i18n.Poppins",
+            "label": "i18n.PoppinsLightItalic",
+            "value": "Poppins_300_italic"
           },
           {
-            "group": "i18n.BrandonGrotesque",
-            "label": "i18n.BrandonGrotesqueMedium",
-            "value": "Brandon_Grotesque_500"
+            "group": "i18n.Poppins",
+            "label": "i18n.PoppinsRegular",
+            "value": "Poppins_400"
           },
           {
-            "group": "i18n.BrandonGrotesque",
-            "label": "i18n.BrandonGrotesqueMediumItalic",
-            "value": "Brandon_Grotesque_500_italic"
+            "group": "i18n.Poppins",
+            "label": "i18n.PoppinsMedium",
+            "value": "Poppins_500"
           },
           {
-            "group": "i18n.BrandonGrotesque",
-            "label": "i18n.BrandonGrotesqueBold",
-            "value": "Brandon_Grotesque_700"
+            "group": "i18n.Poppins",
+            "label": "i18n.PoppinsMediumItalic",
+            "value": "Poppins_500_italic"
           },
           {
-            "group": "i18n.BrandonGrotesque",
-            "label": "i18n.BrandonGrotesqueBoldItalic",
-            "value": "Brandon_Grotesque_700_italic"
+            "group": "i18n.Poppins",
+            "label": "i18n.PoppinsSemiBold",
+            "value": "Poppins_600"
           },
           {
-            "group": "i18n.BrandonGrotesque",
-            "label": "i18n.BrandonGrotesqueBlack",
-            "value": "Brandon_Grotesque_900"
+            "group": "i18n.Poppins",
+            "label": "i18n.PoppinsSemiBoldItalic",
+            "value": "Poppins_600_italic"
           },
           {
-            "group": "i18n.BrandonGrotesque",
-            "label": "i18n.BrandonGrotesqueBlackItalic",
-            "value": "Brandon_Grotesque_900_italic"
+            "group": "i18n.Poppins",
+            "label": "i18n.PoppinsBold",
+            "value": "Poppins_700"
+          },
+          {
+            "group": "i18n.Poppins",
+            "label": "i18n.PoppinsBoldItalic",
+            "value": "Poppins_700_italic"
+          },
+          {
+            "group": "i18n.Poppins",
+            "label": "i18n.PoppinsExtraBold",
+            "value": "Poppins_800"
+          },
+          {
+            "group": "i18n.Poppins",
+            "label": "i18n.PoppinsExtraBoldItalic",
+            "value": "Poppins_800_italic"
+          },
+          {
+            "group": "i18n.Poppins",
+            "label": "i18n.PoppinsBlack",
+            "value": "Poppins_900"
+          },
+          {
+            "group": "i18n.Poppins",
+            "label": "i18n.PoppinsBlackItalic",
+            "value": "Poppins_900_italic"
           }
         ]
       },
