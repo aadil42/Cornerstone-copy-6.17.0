@@ -117,3 +117,11 @@ const quickSearchModal = document.querySelector("#quickSearch");
 quickSearchCloseBtn.addEventListener('click', () => {
     quickSearchModal.classList.remove("is-open");
 });
+
+// this is for toggingling user auth modal
+const test = document.querySelector(".head-banner-text-container");
+const testModal = document.querySelector("#custom-user-auth-modal");
+
+test.addEventListener("click", () => {
+    testModal.classList.toggle("open");
+});
