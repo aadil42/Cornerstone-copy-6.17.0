@@ -98,10 +98,10 @@ svg#quickSearch-icon-close {
 }
 
 div#custom-user-auth-modal {
-    background: red;
     position: fixed;
     top: 0;
     right: 0;
+    background: red;
     width: 40vw;
     height: 100vh;
     z-index: 110;
@@ -111,9 +111,24 @@ div#custom-user-auth-modal {
     position: fixed;
     top: 0;
     right: 0;
+    background: green;
     width: 100vw;
     height: 100vh;
     z-index: 100;
-    background: green;
+}
+
+.user-custom-modal-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    transform: translateX(100%);
+    transition: transform .3s ease;
     z-index: 100;
 }
+
+.user-custom-modal-container.slide-open {
+    transform: translateX(0px);
+}
+
