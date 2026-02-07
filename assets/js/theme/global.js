@@ -57,7 +57,7 @@ export default class Global extends PageManager {
     }
 
     initUserModal({settings, theme_settings, urls}) {
-
+        const userName = "Test Name";
         const userAuthModal = document.querySelector("#custom-user-auth-modal");
         console.log('CustomUserModal', CustomUserModal);
         if (userAuthModal) {
@@ -68,6 +68,9 @@ export default class Global extends PageManager {
             theme_settings={theme_settings}
             settings={settings}
             urls={urls}
+            title="This is meain title"
+            subTitle="This is just subtitle to fill the space"
+            userName={userName}
             />);
         }        
     }
