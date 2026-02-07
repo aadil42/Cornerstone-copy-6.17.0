@@ -101,7 +101,7 @@ div#custom-user-auth-modal {
     position: fixed;
     top: 0;
     right: 0;
-    background: red;
+    background: #fff;
     width: 40vw;
     height: 100vh;
     z-index: 110;
@@ -111,7 +111,8 @@ div#custom-user-auth-modal {
     position: fixed;
     top: 0;
     right: 0;
-    background: green;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
     width: 100vw;
     height: 100vh;
     z-index: 100;
@@ -131,4 +132,3 @@ div#custom-user-auth-modal {
 .user-custom-modal-container.slide-open {
     transform: translateX(0px);
 }
-
