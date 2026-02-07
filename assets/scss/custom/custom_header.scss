@@ -105,6 +105,12 @@ div#custom-user-auth-modal {
     width: 40vw;
     height: 100vh;
     z-index: 110;
+    transform: translateX(100%);
+    transition: transform .5s ease;
+}
+
+#custom-user-auth-modal.slide-open {
+    transform: translateX(0%);
 }
 
 .custom-modal-close-cover {
@@ -124,11 +130,18 @@ div#custom-user-auth-modal {
     right: 0;
     width: 100vw;
     height: 100vh;
-    transform: translateX(100%);
-    transition: transform .3s ease;
+    // transform: translateX(100%);
+    display: none;
+    transition: transform .1s ease;
     z-index: 100;
 }
 
-.user-custom-modal-container.slide-open {
-    transform: translateX(0px);
+.user-custom-modal-container.haze-in-modal {
+    display: block;
 }
+
+
+
+// .user-custom-modal-container.slide-open {
+//     transform: translateX(0px);
+// }

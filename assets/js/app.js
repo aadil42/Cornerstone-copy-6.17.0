@@ -122,11 +122,19 @@ quickSearchCloseBtn.addEventListener('click', () => {
 const navUserIcon = document.querySelector("#navUser-user-icon-id");
 const userModalContainer = document.querySelector(".user-custom-modal-container");
 const userModalCloseArea = document.querySelector(".custom-modal-close-cover");
+const userModal = document.querySelector("#custom-user-auth-modal");
 
 userModalCloseArea.addEventListener("click", () => {
-   userModalContainer.classList.remove("slide-open");
+    userModal.classList.remove("slide-open");
+    
+    setTimeout(() => {
+        userModalContainer.classList.remove("haze-in-modal");
+    }, 500);
 });
 
 navUserIcon.addEventListener("click", () => {
-    userModalContainer.classList.add("slide-open");
+    userModalContainer.classList.add("haze-in-modal");
+    setTimeout(() => {
+        userModal.classList.add("slide-open");
+    }, 10);
 })
