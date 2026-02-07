@@ -56,6 +56,9 @@
 
         {{> components/common/header theme_settings=theme_settings}}
         {{> components/common/body }}
+        
+            {{> components/common/modal/custom-user-auth-modal}}
+
         {{> components/common/footer }}
 
         <script nonce="{{nonce}}">window.__webpack_public_path__ = "{{cdn 'assets/dist/'}}";</script>

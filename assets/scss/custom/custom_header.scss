@@ -96,3 +96,24 @@ svg#quickSearch-icon-close {
     width: 50px;
     height: 50px;
 }
+
+div#custom-user-auth-modal {
+    background: red;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 40vw;
+    height: 100vh;
+    z-index: 110;
+}
+
+.custom-modal-close-cover {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    background: green;
+    z-index: 100;
+}

@@ -64,7 +64,7 @@
         <li class="navUser-item navUser-item--account">
             {{#if customer}}
                 
-                 <svg class="navUser-user-icon">
+                 <svg id="navUser-user-icon-id" class="navUser-user-icon">
                     <use href="#icon-user-solid-full"></use>
                 </svg>
 
@@ -113,11 +113,7 @@
             <div class="dropdown-menu" id="cart-preview-dropdown" data-dropdown-content aria-hidden="true"></div>
         </li>
     </ul>
-    
-    <div class="custom-user-auth-container">
-        {{> components/common/modal/custom-user-auth-modal}}
-    </div>
-    
+        
     <div class="dropdown dropdown--quickSearch" id="quickSearch" aria-hidden="true" data-prevent-quick-search-close>
         {{> components/common/quick-search name='nav-quick-search'}}
             <svg id="quickSearch-icon-close" ><use href="#icon-close" /></svg>
