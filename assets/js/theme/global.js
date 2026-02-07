@@ -17,10 +17,17 @@ import svgInjector from './global/svg-injector';
 import React from "react"; // this is needed here as import even though we're not using it.
 import { createRoot } from "react-dom/client";
 import TestingReactComponent from "../components/TestingReactComponent";
-
+import CustomUserModal from "../components/customUserModal";
 export default class Global extends PageManager {
     onReady() {
-        const { cartId, secureBaseUrl, categories, custom_categories_navigation } = this.context;
+        const { cartId, 
+            secureBaseUrl, 
+            categories, 
+            custom_categories_navigation,
+            settings,
+            theme_settings,
+            urls  } = this.context;
+
         cartPreview(secureBaseUrl, cartId);
         quickSearch();
         currencySelector(cartId);
@@ -32,6 +39,7 @@ export default class Global extends PageManager {
         svgInjector();
 
         this.initReactMobileMenu({categories, custom_categories_navigation});
+        this.initUserModal({settings, theme_settings, urls});
     }
 
     initReactMobileMenu({categories, custom_categories_navigation}) {
@@ -46,5 +54,21 @@ export default class Global extends PageManager {
             menuTitle="Menu"
             />);
         }
+    }
+
+    initUserModal({settings, theme_settings, urls}) {
+
+        const userAuthModal = document.querySelector("#custom-user-auth-modal");
+        console.log('CustomUserModal', CustomUserModal);
+        if (userAuthModal) {
+            console.log('haha from inside', CustomUserModal);
+            const root = createRoot(userAuthModal);
+            root.render(
+            <CustomUserModal 
+            theme_settings={theme_settings}
+            settings={settings}
+            urls={urls}
+            />);
+        }        
     }
 }
