@@ -120,9 +120,13 @@ quickSearchCloseBtn.addEventListener('click', () => {
 
 // this is for toggingling user auth modal
 const navUserIcon = document.querySelector("#navUser-user-icon-id");
-const userModal = document.querySelector("#custom-user-auth-modal");
+const userModalContainer = document.querySelector(".user-custom-modal-container");
+const userModalCloseArea = document.querySelector(".custom-modal-close-cover");
+
+userModalCloseArea.addEventListener("click", () => {
+   userModalContainer.classList.remove("slide-open");
+});
 
 navUserIcon.addEventListener("click", () => {
-    console.log('hah');
-    userModal.classList.toggle("slide-open");
-});
+    userModalContainer.classList.add("slide-open");
+})
