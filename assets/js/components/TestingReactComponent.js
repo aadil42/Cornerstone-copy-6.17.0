@@ -42,7 +42,9 @@ export default function TestingReactComponent({categories, custom_categories_nav
       handler={false}
       width={400}
       showMask={false}
-      getContainer={false} >
+      getContainer={false} 
+      aria-label="Mobile Navigation Menu"
+      >
       <div style={{ padding: "1rem" }}>
         {stack.length > 1 && <button className="mobile-menu-back-btn" onClick={goBack}><ChevronLeft size={24} color="#333" strokeWidth={3} /> Back</button>}
         <h3>{current.title}</h3>
