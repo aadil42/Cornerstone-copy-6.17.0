@@ -44,18 +44,18 @@ export default function TestingReactComponent({categories, custom_categories_nav
       showMask={false}
       getContainer={false} >
       <div style={{ padding: "1rem" }}>
-        {stack.length > 1 && <button class="mobile-menu-back-btn" onClick={goBack}><ChevronLeft size={24} color="#333" strokeWidth={3} /> Back</button>}
+        {stack.length > 1 && <button className="mobile-menu-back-btn" onClick={goBack}><ChevronLeft size={24} color="#333" strokeWidth={3} /> Back</button>}
         <h3>{current.title}</h3>
-        <ul class="mobile-menu-items-list" style={{ listStyle: "none", padding: 0 }}>
+        <ul className="mobile-menu-items-list" style={{ listStyle: "none", padding: 0 }}>
           {current.items.map((item, idx) => {
             const dontDisplayIfItHasImageOnLevel1 = stack.length !== 2 || (!item.bc?.customImages && isEmptyObject(item.bc?.image)); 
             if (dontDisplayIfItHasImageOnLevel1) {
-              return <li key={uuidv4()} class="mobile-menu-items" style={{ margin: "0.5rem 0" }}>
+              return <li key={uuidv4()} className="mobile-menu-items" style={{ margin: "0.5rem 0" }}>
                 <a href={item.link}>
                     {item.label}
                 </a>
                 {item.children && <button onClick={() => openSubmenu(item.children, item.label)}>
-                      <span class="mobile-menu-item-arrow">→</span>
+                      <span className="mobile-menu-item-arrow">→</span>
                 </button>}
               </li>
             }
@@ -70,7 +70,7 @@ export default function TestingReactComponent({categories, custom_categories_nav
                           
                           <a
                             href={item.link}
-                            class="mobile-menu-img-link-text"
+                            className="mobile-menu-img-link-text"
                           >
                             
                             <img 
@@ -79,7 +79,7 @@ export default function TestingReactComponent({categories, custom_categories_nav
                           />
 
                             {item.label}
-                            <span class="mobile-menu-item-arrow">→</span>
+                            <span className="mobile-menu-item-arrow">→</span>
                           </a>
                         </div> 
               }
@@ -88,7 +88,7 @@ export default function TestingReactComponent({categories, custom_categories_nav
                         
                       <a
                         href={item.link}
-                        class="mobile-menu-img-link-text"
+                        className="mobile-menu-img-link-text"
                       >
                         <img 
                           src={getBigCommerceUrl(item.bc.image, 400)}
@@ -96,7 +96,7 @@ export default function TestingReactComponent({categories, custom_categories_nav
                         />
 
                         {item.label}
-                        <span class="mobile-menu-item-arrow">→</span>
+                        <span className="mobile-menu-item-arrow">→</span>
                       </a>
                     </div> 
               }
