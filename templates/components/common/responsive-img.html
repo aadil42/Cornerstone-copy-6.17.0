@@ -57,9 +57,9 @@ pick the best-sized image based on its own understanding of how it will render t
 {{#unless lazyload '==' 'disabled'}}data-{{/unless}}srcset="{{getImageSrcset image use_default_sizes=true }}"
 {{else if default_image}}src="{{cdn default_image}}" alt="{{lang 'products.card_default_image_alt'}}"{{/if}}
 class="{{#unless lazyload '==' 'disabled'}}lazyload{{/unless}}{{#if class}} {{class}}{{/if}}"
-{{#if lazyload '==' 'lazyload'}}loading="lazy"{{/if}}
 {{otherAttributes}} 
 
 {{#if fetchpriority '==' 'high'}}fetchpriority="high"{{/if}}
-{{#if lazyload '==' 'eager'}}loading="eager"{{/if}}
+
+{{#if lazyload}}loading="{{lazyload}}"{{/if}}
 />
