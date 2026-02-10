@@ -2,18 +2,24 @@
 <html class="no-js" lang="{{ locale_name }}">
     <head>
         <title>{{ head.title }}</title>
-        {{{ resourceHints }}}
-        {{{ head.meta_tags }}}
-        {{{ head.config }}}
-        {{#block "head"}} {{/block}}
+
         <link rel="preload" as="image" 
+        href="https://cdn11.bigcommerce.com/s-jjeyxhn1al/images/stencil/640w/carousel/1/stencil-hero-01.jpg?c=1"
         imagesrcset="https://cdn11.bigcommerce.com/s-jjeyxhn1al/images/stencil/80w/carousel/1/stencil-hero-01.jpg?c=1 80w,
                     https://cdn11.bigcommerce.com/s-jjeyxhn1al/images/stencil/160w/carousel/1/stencil-hero-01.jpg?c=1 160w,
                     https://cdn11.bigcommerce.com/s-jjeyxhn1al/images/stencil/320w/carousel/1/stencil-hero-01.jpg?c=1 320w,
                     https://cdn11.bigcommerce.com/s-jjeyxhn1al/images/stencil/640w/carousel/1/stencil-hero-01.jpg?c=1 640w,
                     https://cdn11.bigcommerce.com/s-jjeyxhn1al/images/stencil/960w/carousel/1/stencil-hero-01.jpg?c=1 960w,
                     https://cdn11.bigcommerce.com/s-jjeyxhn1al/images/stencil/1241w/carousel/1/stencil-hero-01.jpg?c=1 1241w"
-        imagesizes="100vw">       
+        imagesizes="100vw"
+        fetchpriority="high"
+        > 
+
+        {{{ resourceHints }}}
+        {{{ head.meta_tags }}}
+        {{{ head.config }}}
+        {{#block "head"}} {{/block}}
+        
          <link href="{{{ head.favicon }}}" rel="shortcut icon">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
