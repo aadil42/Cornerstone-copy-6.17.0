@@ -6,11 +6,6 @@ const getAccount = () => import('./theme/account');
 const getLogin = () => import('./theme/auth');
 const noop = null;
 
-
-// react imports
-import React from "react";
-import { createRoot } from "react-dom/client";
-
 const pageClasses = {
     account_orderstatus: getAccount,
     account_order: getAccount,
@@ -109,8 +104,6 @@ const body = document.querySelector("body");
 
 hamburger.addEventListener('click', () => {
   modal.classList.toggle('open');
-  body.classList.toggle('has-activeNavPages'); // for some reason this class is added on the body and not removed. 
-  // so we remove it.
 });
 
 // this is for toggling quick search
