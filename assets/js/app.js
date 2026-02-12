@@ -114,13 +114,15 @@ quickSearchCloseBtn.addEventListener('click', () => {
     quickSearchModal.classList.remove("is-open");
 });
 
-// this is for toggingling user auth modal
+// this is for toggingling user auth modal for login and logout.
 const navUserIcon = document.querySelector("#navUser-user-icon-id");
+const navUserIconLoginRegister = document.querySelector("#navUser-user-icon-signin-register");
+
 const userModalContainer = document.querySelector(".user-custom-modal-container");
 const userModalCloseArea = document.querySelector(".custom-modal-close-cover");
 const userModal = document.querySelector("#custom-user-auth-modal");
 
-userModalCloseArea.addEventListener("click", () => {
+userModalCloseArea?.addEventListener("click", () => {
     userModal.classList.remove("slide-open");
     
     setTimeout(() => {
@@ -128,9 +130,16 @@ userModalCloseArea.addEventListener("click", () => {
     }, 500);
 });
 
-navUserIcon.addEventListener("click", () => {
+navUserIcon?.addEventListener("click", () => {
     userModalContainer.classList.add("haze-in-modal");
     setTimeout(() => {
         userModal.classList.add("slide-open");
     }, 10);
 })
+
+navUserIconLoginRegister?.addEventListener("click", () => {
+    userModalContainer.classList.add("haze-in-modal");
+    setTimeout(() => {
+        userModal.classList.add("slide-open");
+    }, 10);
+});

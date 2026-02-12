@@ -21,7 +21,8 @@ export default class Global extends PageManager {
             custom_categories_navigation,
             settings,
             theme_settings,
-            urls  } = this.context;
+            urls, 
+            customer } = this.context;
 
         cartPreview(secureBaseUrl, cartId);
         quickSearch();
@@ -32,9 +33,17 @@ export default class Global extends PageManager {
         menu();
         mobileMenuToggle();
         svgInjector();
+        
+        if (customer) {
+            // show the modal for logout and account
+            this.initUserModal({settings, theme_settings, urls});
+        } else {
+            // show the modal for register and login
+            this.initUserModalRegisterLogin({settings, theme_settings, urls});
+        }
 
+        // show the mobile menu.
         this.initReactMobileMenu({categories, custom_categories_navigation});
-        this.initUserModal({settings, theme_settings, urls});
     }
 
     async initReactMobileMenu({categories, custom_categories_navigation}) {
@@ -76,9 +85,51 @@ export default class Global extends PageManager {
                     theme_settings,
                     settings,
                     urls,
-                    title: "This is meain title",
+                    title: "This is main title",
                     subTitle: "This is just subtitle to fill the space",
-                    userName
+                    userName: userName,
+                    buttonFirst: {
+                        title: "Account",
+                        link: urls.account.index
+                    },
+                    buttonSecond: {
+                        title: "Logout",
+                        link: urls.auth.logout
+                    }
+                })
+            );
+        }        
+    }
+
+    async initUserModalRegisterLogin ({settings, theme_settings, urls}) {
+        const userName = "Test Name";
+        const userAuthModal = document.querySelector("#custom-user-auth-modal");
+        
+        if (userAuthModal) {
+            const [{ default: React }, { createRoot }, { default: CustomUserModal }] = await Promise.all([
+                import('react'),
+                import('react-dom/client'),
+                import('../components/customUserModal')
+            ]);
+            
+            console.log('CustomUserModal', CustomUserModal);
+            const root = createRoot(userAuthModal);
+            root.render(
+                React.createElement(CustomUserModal, {
+                    theme_settings,
+                    settings,
+                    urls,
+                    title: "This is main title",
+                    subTitle: "This is just subtitle to fill the space",
+                    userName: userName,
+                    buttonFirst: {
+                        title: "Sign in",
+                        link: urls.auth.login
+                    },
+                    buttonSecond: {
+                        title: "Register",
+                        link: urls.auth.create_account
+                    }
                 })
             );
         }        
