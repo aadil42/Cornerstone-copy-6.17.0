@@ -69,21 +69,11 @@
                 </svg>
 
             {{else}}
-                <a class="navUser-action"
-                   href="{{urls.auth.login}}"
-                   aria-label="{{lang 'common.login'}}"
-                >
-                    {{lang 'common.login'}}
-                </a>
-                {{#if settings.account_creation_enabled}}
-                    <span class="navUser-or">{{lang 'common.or'}}</span>
-                    <a class="navUser-action"
-                       href="{{urls.auth.create_account}}"
-                       aria-label="{{lang 'common.sign_up'}}"
-                    >
-                        {{lang 'common.sign_up'}}
-                    </a>
-                {{/if}}
+
+                 <svg id="navUser-user-icon-signin-register" class="navUser-user-icon">
+                    <use href="#icon-user-solid-full"></use>
+                </svg>
+                
             {{/if}}
         </li>
         <li class="navUser-item navUser-item--cart">
