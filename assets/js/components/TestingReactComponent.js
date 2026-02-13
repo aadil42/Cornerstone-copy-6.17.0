@@ -28,9 +28,6 @@ export default function TestingReactComponent({categories, custom_categories_nav
     setStack(stack.slice(0, -1));
   };
 
-  useEffect(() => {
-    console.log(categories, custom_categories_navigation);
-  },[]);
 
   const current = stack[stack.length - 1];
 
