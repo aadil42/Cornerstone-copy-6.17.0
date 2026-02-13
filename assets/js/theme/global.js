@@ -44,6 +44,9 @@ export default class Global extends PageManager {
 
         // show the mobile menu.
         this.initReactMobileMenu({categories, custom_categories_navigation});
+
+        // fetch products
+        this.fetchProductsExample();
     }
 
     async initReactMobileMenu({categories, custom_categories_navigation}) {
@@ -78,7 +81,6 @@ export default class Global extends PageManager {
                 import('../components/customUserModal')
             ]);
             
-            console.log('CustomUserModal', CustomUserModal);
             const root = createRoot(userAuthModal);
             root.render(
                 React.createElement(CustomUserModal, {
@@ -133,5 +135,46 @@ export default class Global extends PageManager {
                 })
             );
         }        
+    }
+
+    async fetchProductsExample() {
+    try {
+        const response = await fetch('/graphql', {
+            method: 'POST',
+            headers: { 
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${this.context.settings.storefront_api.token}` 
+            },
+            credentials: 'same-origin',
+            body: JSON.stringify({
+                query: `query {
+                    site {
+                        products(first: 5) {
+                            edges {
+                                node {
+                                    entityId
+                                    name
+                                    sku
+                                    prices {
+                                        price {
+                                            value
+                                            currencyCode
+                                        }
+                                    }
+                                    path
+                                }
+                            }
+                        }
+                    }
+                }`
+            })
+        });
+        
+        const result = await response.json();
+        console.log('✅ Fetched products via Storefront API:', result.data);
+        return result.data;
+    } catch (error) {
+        console.error('❌ Error fetching products:', error);
+    }
     }
 }
