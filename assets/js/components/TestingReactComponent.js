@@ -12,8 +12,44 @@ import "./mobileMenuStyles.css";
 import { isEmpty } from "lodash";
 import { isEmptyObject } from "jquery";
 
+const transformIntoObjs = (metaArr) => {
+  const result = {};
+  
+  metaArr.forEach(item => {
+    const key = `id_${item.resource_id}`;
+    result[key] = JSON.parse(item.value);
+  });
+  
+  console.log('result', result);
+  return result;
+
+}
+
 export default function TestingReactComponent({categories, custom_categories_navigation, menuTitle}) {
   
+
+  const getCategoryMetafeilds = async () => {
+
+    const url = `https://acquiescent-meda-kickless.ngrok-free.dev/api/all-category-metafields`;
+    const response = await fetch(url, 
+       {
+            headers: {
+                'Content-Type': 'application/json',
+                'ngrok-skip-browser-warning': 'true'
+            }
+        }
+    );
+    const categoriesMetafield = await response.json();
+
+    // console.log('haha', categoriesMetafield)
+    transformIntoObjs(categoriesMetafield.data);    
+
+  }
+
+  useEffect(() => {
+    getCategoryMetafeilds();
+  }, []);
+
   const categoriesMenu = useMemo(() => {
       return computeCategoriesMenu({categories, custom_categories_navigation});
   }, [categories, custom_categories_navigation]);
