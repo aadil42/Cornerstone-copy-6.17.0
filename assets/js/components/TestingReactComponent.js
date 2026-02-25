@@ -20,13 +20,15 @@ const transformIntoObjs = (metaArr) => {
     result[key] = JSON.parse(item.value);
   });
   
-  console.log('result', result);
   return result;
-
 }
 
-export default function TestingReactComponent({categories, custom_categories_navigation, menuTitle}) {
+export default function TestingReactComponent({categories, menuTitle}) {
   
+
+  const [categoriesNavMetafields, setCategoriesNavMetafields] = useState({});
+  // const [computedCategories, setComputedCategories] = useState([]);
+  const [stack, setStack] = useState([{ items: [], title: (menuTitle ? menuTitle : "Menu")}]);
 
   const getCategoryMetafeilds = async () => {
 
@@ -41,20 +43,22 @@ export default function TestingReactComponent({categories, custom_categories_nav
     );
     const categoriesMetafield = await response.json();
 
-    // console.log('haha', categoriesMetafield)
-    transformIntoObjs(categoriesMetafield.data);    
-
+    const transformedObj = transformIntoObjs(categoriesMetafield.data);
+    setCategoriesNavMetafields(transformedObj);    
   }
 
   useEffect(() => {
     getCategoryMetafeilds();
   }, []);
 
-  const categoriesMenu = useMemo(() => {
-      return computeCategoriesMenu({categories, custom_categories_navigation});
-  }, [categories, custom_categories_navigation]);
+  useEffect(() => {
+      const computed = computeCategoriesMenu({categories, categoriesNavMetafields});
+      console.log('categories', categories);
+      console.log('customMetafiled', categoriesNavMetafields);
+      console.log('new computed from useEffect', computed);
+      setStack([{ items: computed, title: (menuTitle ? menuTitle : "Menu")}])
+  }, [categories, categoriesNavMetafields]);
 
-  const [stack, setStack] = useState([{ items: categoriesMenu, title: (menuTitle ? menuTitle : "Menu")}]);
 
   const openSubmenu = (children, title) => {
     setStack([...stack, { items: children, title }]);
@@ -87,9 +91,9 @@ export default function TestingReactComponent({categories, custom_categories_nav
             if (dontDisplayIfItHasImageOnLevel1) {
               return <li key={uuidv4()} className="mobile-menu-items" style={{ margin: "0.5rem 0" }}>
                 <a href={item.link}>
-                    {item.label}
+                    {item.mobileLabel}
                 </a>
-                {item.children && <button onClick={() => openSubmenu(item.children, item.label)}>
+                {item.children && <button onClick={() => openSubmenu(item.children, item.mobileLabel)}>
                       <span className="mobile-menu-item-arrow">→</span>
                 </button>}
               </li>
@@ -113,7 +117,7 @@ export default function TestingReactComponent({categories, custom_categories_nav
                             alt={item.bc.customImages.mobile.alt}
                           />
 
-                            {item.label}
+                            {item.mobileLabel}
                             <span className="mobile-menu-item-arrow">→</span>
                           </a>
                         </div> 
@@ -130,7 +134,7 @@ export default function TestingReactComponent({categories, custom_categories_nav
                           alt={item.bc.image.alt}
                         />
 
-                        {item.label}
+                        {item.mobileLabel}
                         <span className="mobile-menu-item-arrow">→</span>
                       </a>
                     </div> 

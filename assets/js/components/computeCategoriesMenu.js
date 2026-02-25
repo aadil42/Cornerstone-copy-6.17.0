@@ -1,12 +1,13 @@
 export default function computeCategoriesMenu({
     categories,
-    custom_categories_navigation = {}
+    categoriesNavMetafields = {}
 }) {
 
     return categories.map((cat) => {
-        const custom = custom_categories_navigation[`id_${cat.id}`];
+        const custom = categoriesNavMetafields[`id_${cat.id}`];
         const node = {
-            label: custom?.desktop?.title || cat.name,
+            mobileLabel: custom?.mobile?.title || cat.name,
+            desktopLabel: custom?.desktop?.title || cat.name,
             link: cat.url,
             bc: {
                 ...cat,
@@ -25,7 +26,7 @@ export default function computeCategoriesMenu({
         node.children = computeCategoriesMenu(
         {
             categories: cat.children, 
-            custom_categories_navigation: custom_categories_navigation
+            categoriesNavMetafields: categoriesNavMetafields
         }
         );
         }
