@@ -163,3 +163,10 @@ p.custom-image-navPage-subMenu-item-title-text {
 .navPages-list .navPages-action {
   place-content: center;
 }
+
+.navPages a.navPage-subMenu-action.navPages-action.level-2 {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    justify-content: start;
+    gap: 2px;
+}

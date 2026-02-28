@@ -12,16 +12,16 @@
 
         <div class="navPage-subMenu-item-first">
             
-            <a class="navPage-subMenu-action navPages-action"
+            <a class="navPage-subMenu-action navPages-action level-1"
                href="{{url}}"
                aria-label="{{lang 'category.view_all.name' category=name}}"
             >
                 <span class="navPage-subMenu-action-text">
                             {{name}}
-                    <svg class="navPage-subMenu-action-text-right-icon" style="fill: red;">
-                        <use href="#icon-chevron-right" />
-                    </svg>
                 </span>
+                <svg class="navPage-subMenu-action-text-right-icon" style="fill: red;">
+                        <use href="#icon-chevron-right" />
+                </svg>
             </a>
         </div>
 
@@ -35,16 +35,16 @@
                     {{{children.description}}}
                     {{!-- <p>level unknown</p> --}}
                     {{#if children}}
-                        <a class="navPage-subMenu-action navPages-action has-subMenu{{#if is_active}} activePage{{/if}}"
+                        <a class="navPage-subMenu-action navPages-action level-2 has-subMenu{{#if is_active}} activePage{{/if}}"
                             href="{{url}}"
                             aria-label="{{name}}"
                         >
                             <span class="navPage-subMenu-action-text">
                             {{name}}
-                                <svg class="navPage-subMenu-action-text-right-icon" style="fill: red;">
-                                    <use href="#icon-chevron-right" />
-                                </svg>
                             </span>
+                            <svg class="navPage-subMenu-action-text-right-icon" style="fill: red;">
+                                    <use href="#icon-chevron-right" />
+                            </svg>
                         </a>
                         <ul class="navPage-childList" id="navPages-{{id}}">
                             {{#each children}}
